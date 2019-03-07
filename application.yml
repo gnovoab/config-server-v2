@@ -1,0 +1,47 @@
+info:
+  description: Global file configuration
+
+#Eureka configuration
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://eureka-service-v2.common.svc.cluster.local/eureka
+  instance:
+    preferIpAddress: true
+
+
+#Spring Boot Admin & zipkin
+spring:
+  boot:
+    admin:
+      client:
+        url: http://admin-service-v2.common.svc.cluster.local
+
+#Actuactor configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+#Oauth 2 auth endpoint
+
+---
+
+spring:
+  profiles: default, native, unitTest, integrationTest
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:7500
+
+eureka:
+  client:
+    enabled: false

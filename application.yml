@@ -65,6 +65,6 @@ eureka:
   client:
     enabled: true
     serviceUrl:
-      defaultZone: http://eureka-service-server-v2:8761/eureka
+      defaultZone: http://eureka-service-v2:8761/eureka
   instance:
     preferIpAddress: true

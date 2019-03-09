@@ -67,4 +67,4 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka-service-v2:8761/eureka
   instance:
-    preferIpAddress: true
+    hostname: eureka-service-v2

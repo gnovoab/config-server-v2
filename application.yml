@@ -63,8 +63,8 @@ spring:
 
 eureka:
   client:
-    enabled: true
+    enabled: false
     serviceUrl:
       defaultZone: http://eureka-service-v2:8761/eureka
   instance:
-    hostname: eureka-service-v2
+    preferIpAddress: false

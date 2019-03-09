@@ -56,15 +56,6 @@ eureka:
 spring:
   profiles: docker
 
-  boot:
-    admin:
-      client:
-        url: http://admin-service-v2:7500
-
 eureka:
   client:
     enabled: false
-    serviceUrl:
-      defaultZone: http://eureka-service-v2:8761/eureka
-  instance:
-    preferIpAddress: false

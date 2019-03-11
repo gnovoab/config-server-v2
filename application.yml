@@ -40,13 +40,13 @@ spring:
   boot:
     admin:
       client:
-        url: http://127.0.0.1:7500
+        url: http://localhost:7500
 
 eureka:
   client:
     enabled: true
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     preferIpAddress: true
     

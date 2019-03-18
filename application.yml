@@ -69,10 +69,11 @@ security:
       client-secret: clientSecret
       access-token-uri: http://localhost:9999/api/v2/oauth/token
       user-authorization-uri: http://localhost:9999/api/v2/oauth/authorize
+      scope: read,write
     resource:
       user-info-uri: http://localhost:9999/api/v2/user/me
 
-    
+
 
 ---
 

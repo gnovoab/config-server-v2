@@ -1,23 +1,18 @@
 info:
   description: Global file configuration
 
-#Eureka configuration
-eureka:
-  client:
+
+#Feign CLients
+feign:
+  hystrix:
     enabled: true
-    serviceUrl:
-      defaultZone: http://eureka-service-v2.common.svc.cluster.local/eureka
-  instance:
-    preferIpAddress: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
 
-
-#Spring Boot Admin
-spring:
-  boot:
-    admin:
-      client:
-        url: http://admin-service-v2.common.svc.cluster.local
-        
 
 #Actuactor configuration
 management:
@@ -29,26 +24,13 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-      
-#Feign CLients    
-feign:
-  hystrix:
-    enabled: true
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: basic      
 
-
-#Oauth 2 auth endpoint
 
 ---
 
 spring:
-  profiles: default, native, unitTest, integrationTest
-  
+  profiles: dev, sandbox, uat
+
   security:
     user:
       name: admin
@@ -57,39 +39,33 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:7500
+        url: http://admin-service-v2.common.svc.cluster.local
+        
 
+  
+#Eureka configuration
 eureka:
   client:
     enabled: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka-service-v2.common.svc.cluster.local/eureka
   instance:
     preferIpAddress: true
- 
+    
+
+
+#Oauth 2 auth endpoint
 security:
   oauth2:
     client:
       client-id: clientTest
       client-secret: clientSecret
-      access-token-uri: http://localhost:9999/api/v2/oauth/token
-      user-authorization-uri: http://localhost:9999/api/v2/oauth/authorize
+      access-token-uri: http://authorization-service-v2/api/v2/oauth/token
+      user-authorization-uri: http://authorization-service-v2/api/v2/oauth/authorize
       scope: read write
     resource:
-      user-info-uri: http://localhost:9999/api/v2/user/me
-      
+      user-info-uri: http://authorization-service-v2/api/v2/user/me
 
 
 
----
 
-spring:
-  profiles: docker
-
-eureka:
-  client:
-    enabled: true
-    serviceUrl:
-      defaultZone: http://eureka-service-v2:8761/eureka
-  instance:
-    preferIpAddress: true

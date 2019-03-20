@@ -1,0 +1,33 @@
+
+spring:
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+  boot:
+    admin:
+      client:
+        url: http://admin-service-v2:7500
+
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://eureka-service-v2:8761/eureka
+  instance:
+    preferIpAddress: true
+
+
+security:
+  oauth2:
+    client:
+      client-id: clientTest
+      client-secret: clientSecret
+      access-token-uri: http://authorization-service-v2/api/v2/oauth/token
+      user-authorization-uri: http://authorization-service-v2/api/v2/oauth/authorize
+      scope: read write
+    resource:
+      user-info-uri: http://authorization-service-v2/api/v2/user/me

@@ -15,6 +15,6 @@ integrationTest:
   oauth2:
     client-id-sample: clientTest
     client-secret-sample: clientSecret
-    user-username-sample: integrationTest
-    user-password-sample: integrationTest
+    user-username-sample: unitTest
+    user-password-sample: unitTest
     user-skinId-sample: 1

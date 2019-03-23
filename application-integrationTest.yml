@@ -11,7 +11,7 @@ security:
 
 
 
-integrationTest:
+test:
   oauth2:
     client-id-sample: clientTest
     client-secret-sample: clientSecret

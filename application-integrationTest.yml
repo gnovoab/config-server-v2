@@ -1,11 +1,3 @@
-spring:
-
-  security:
-    user:
-      name: admin
-      password: admin
-
-
 
 security:
   oauth2:
@@ -27,3 +19,12 @@ test:
     user-username-sample: integrationTest
     user-password-sample: integrationTest
     user-skinId-sample: 1
+
+
+
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin

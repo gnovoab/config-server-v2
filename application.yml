@@ -64,7 +64,7 @@ security:
       user-authorization-uri: http://authorization-service-v2/api/v2/oauth/authorize
       scope: read write
     resource:
-      user-info-uri: http://authorization-service-v2/api/v2/user/me
+      user-info-uri: http://authorization-service-v2/api/v2/users/me
 
 
 

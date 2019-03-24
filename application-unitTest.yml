@@ -7,7 +7,7 @@ security:
       user-authorization-uri: http://localhost:9999/api/v2/oauth/authorize
       scope: read write
     resource:
-      user-info-uri: http://localhost:9999/api/v2/user/me
+      user-info-uri: http://localhost:9999/api/v2/users/me
 
 
 
